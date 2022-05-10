@@ -1,0 +1,5 @@
+MainPackage=C:\Users\wxinb\Documents\GitHub\NCEE-Countdown\高考倒计时\bin\x64\Release\高考倒计时_1.3.3.0_x64.appx
+ResourcePack=C:\Users\wxinb\Documents\GitHub\NCEE-Countdown\高考倒计时\bin\x64\Release\高考倒计时_1.3.3.0_scale-100.appx
+ResourcePack=C:\Users\wxinb\Documents\GitHub\NCEE-Countdown\高考倒计时\bin\x64\Release\高考倒计时_1.3.3.0_scale-125.appx
+ResourcePack=C:\Users\wxinb\Documents\GitHub\NCEE-Countdown\高考倒计时\bin\x64\Release\高考倒计时_1.3.3.0_scale-150.appx
+ResourcePack=C:\Users\wxinb\Documents\GitHub\NCEE-Countdown\高考倒计时\bin\x64\Release\高考倒计时_1.3.3.0_scale-400.appx
