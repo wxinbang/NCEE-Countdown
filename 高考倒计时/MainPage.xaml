@@ -7,22 +7,55 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d"
 	xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-	muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
 	Loaded="Page_Loaded">
-	
-	<Grid>
+
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceDictionary x:Key="Default">
+					<AcrylicBrush x:Key="AcrylicBackgroundFillColorDefaultBrush"
+						  TintOpacity="0"
+						  TintLuminosityOpacity="0"
+								  BackgroundSource="HostBackdrop"/>
+				</ResourceDictionary>
+				<ResourceDictionary x:Key="Light">
+					<AcrylicBrush x:Key="AcrylicBackgroundFillColorDefaultBrush"
+						  TintOpacity="0"
+						  TintLuminosityOpacity="0"
+								  BackgroundSource="HostBackdrop"/>
+				</ResourceDictionary>
+			</ResourceDictionary.ThemeDictionaries>
+		</ResourceDictionary>
+	</Page.Resources>
+	<Page.Background>
+		<AcrylicBrush/>
+	</Page.Background>
+
+	<Grid Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
 		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
-		<TextBlock Grid.Row="0" x:Name="NowTime" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="10" FontFamily="Cascadia Code SemiBold"/>
+		<Grid Grid.Row="0" x:Name="AppTitleBar" Background="Transparent">
+			<TextBlock x:Name="AppTitleTextBlock"
+			   Text="高考倒计时" 
+			   Style="{StaticResource CaptionTextBlockStyle}" 
+			   VerticalAlignment="Center"
+			   Margin="18,8,0,0"
+			   Height="32"/>
+		</Grid>
 
-		<TextBlock Grid.Row="1" x:Name="LeftTime" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="10" FontFamily="Cascadia Code SemiBold"/>
+		<TextBlock Grid.Row="1" x:Name="NowTime" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Margin="10" FontFamily="Cascadia Code SemiBold"/>
 
-		<ToggleSwitch Grid.Row="1" x:Name="FastMode" VerticalAlignment="Bottom" HorizontalAlignment="Right" OnContent="开" OffContent="关" Header="心动模式" Toggled="FastMode_Toggled" />
+		<TextBlock Grid.Row="2" x:Name="LeftTime" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Margin="10" FontFamily="Cascadia Code SemiBold"/>
 
-		<TextBlock Grid.Row="2" x:Name="LeftDay" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" Margin="10" FontFamily="Cascadia Code SemiBold"/>
-	</Grid>
+		<ToggleSwitch Grid.Row="3" x:Name="FastMode" VerticalAlignment="Bottom" HorizontalAlignment="Right" OnContent="开" OffContent="关" Margin="20,20,-50,20" Header="心动模式" Toggled="FastMode_Toggled" />
+
+		<TextBlock Grid.Row="3" x:Name="LeftDay" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Margin="10" FontFamily="Cascadia Code SemiBold"/>
+
+        <ComboBox Grid.Row="3"  x:Name="Years" SelectedValuePath="Item0" Header="年份" Margin="20,10,10,10" SelectionChanged="ComboBox_SelectionChanged"/>
+    </Grid>
 </Page>
