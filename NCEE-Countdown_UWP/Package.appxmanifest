@@ -9,7 +9,7 @@
   <Identity
     Name="xbb.NCEE.Countdown"
     Publisher="CN=xbb"
-    Version="1.5.5.0" />
+    Version="1.6.6.0" />
 
   <mp:PhoneIdentity PhoneProductId="a0d2a76d-6448-4475-9bdb-4e2469c98c48" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

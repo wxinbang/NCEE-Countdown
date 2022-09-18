@@ -79,7 +79,7 @@ namespace 高考倒计时
 			if (leftTime.TotalSeconds > 0)
 			{
 				leftDays = finalDay - nowTime;
-				leftTotalDays = Math.Floor(leftDays.TotalDays).ToString();
+				leftTotalDays = Math.Ceiling(leftDays.TotalDays).ToString();
 				LeftDay.Text = "广义剩余" + (leftTotalDays == "-1" ? "0" : leftTotalDays) + "天";
 			}
 			else leftTime = new TimeSpan(0, 0, 0, 0, 0);
